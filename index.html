@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE (Main) 2021 NTA Score</title>
+    <style>
+        /* CSS Variables for Exact Branding */
+        :root {
+            --nta-magenta: #a01b52;
+            --nta-orange: #f0ad4e;
+            --btn-red: #ee3124;
+            --bg-gray: #f9f9f9;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        /* Header Layout */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 60px;
+            border-bottom: 1px solid #eee;
+        }
+        .header-logo { height: 75px; }
+        .header-center {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            color: #000;
+        }
+
+        /* Nav Bar */
+        .nav-bar {
+            background-color: var(--nta-magenta);
+            color: white;
+            padding: 7px 60px;
+            font-size: 13px;
+            font-weight: bold;
+            border-bottom: 4px solid var(--nta-orange);
+        }
+
+        /* Main Container */
+        .main-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .card {
+            width: 620px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .card-header {
+            background-color: var(--nta-magenta);
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Form Styling */
+        .form-content { padding: 35px 40px; }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;A
+        }
+        .form-row label {
+            width: 40%;
+            text-align: right;
+            padding-right: 20px;
+            font-size: 13px;
+            color: #444;
+        }
+        .form-row input, .form-row select {
+            width: 55%;
+            padding: 6px;
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            font-size: 13px;
+        }
+
+        /* CAPTCHA / Security Pin Area */
+        .pin-container {
+            display: flex;
+            align-items: center;
+            width: 55%;
+        }
+        .pin-box {
+            background-color: #eee;
+            padding: 4px 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 20px;
+            letter-spacing: 4px;
+            color: var(--nta-magenta);
+            border: 1px solid #ccc;
+            margin-right: 15px;
+        }
+        .regen-link {
+            color: #0056b3;
+            font-size: 11px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: var(--btn-red);
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 25px auto 0;
+            display: block;
+        }
+
+        /* Marksheet Styling (Initially Hidden) */
+        #marksheet {
+            display: none;
+            max-width: 900px;
+            margin: 40px auto;
+            border: 2px solid #000;
+            padding: 30px;
+            background: #fff;
+            position: relative;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 100px;
+            color: rgba(0,0,0,0.03);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .result-table th, .result-table td {
+            border: 1px solid #000;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-screen">
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_of_India_logo.svg/1200px-Government_of_India_logo.svg.png" class="header-logo" alt="Gov">
+        <div class="header-center">
+            Ministry of Education<br>
+            <span style="font-weight:normal; font-size:14px;">Government of India</span><br><br>
+            Joint Entrance Examination (Main) 2021 NTA Score
+        </div>
+        <img src="https://nta.ac.in/img/nta_logo_new.png" class="header-logo" alt="NTA">
+    </div>
+
+    <div class="nav-bar">Home</div>
+
+    <div class="main-wrapper">
+        <div class="card">
+            <div class="card-header">View Result</div>
+            <div class="form-content">
+                <div class="form-row">
+                    <label>Examination Session :</label>
+                    <select id="session"><option>Session 4</option></select>
+                </div>
+                <div class="form-row">
+                    <label>Application Number :</label>
+                    <input type="text" id="app_no">
+                </div>
+                <div class="form-row">
+                    <label>Date of Birth :</label>
+                    <div style="width:55%; display:flex; gap:5px;">
+                        <input type="number" id="dd" placeholder="Day" style="width:30%">
+                        <input type="number" id="mm" placeholder="Month" style="width:35%">
+                        <input type="number" id="yyyy" placeholder="Year" style="width:35%">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label style="color: var(--nta-magenta); font-weight:bold;">Enter Security Pin :</label>
+                    <input type="text" id="pin_input">
+                </div>
+                <div class="form-row">
+                    <label>Security Pin :</label>
+                    <div class="pin-container">
+                        <div class="pin-box" id="generated_pin">67V500</div>
+                        <span class="regen-link" onclick="generatePin()">Regenerate Security Pin</span>
+                    </div>
+                </div>
+                <button class="btn-submit" onclick="validate()">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="marksheet">
+    <div class="watermark">NTA SCORE CARD</div>
+    <div style="text-align:center;">
+        <img src="https://nta.ac.in/img/nta_logo_new.png" height="70">
+        <h3>NATIONAL TESTING AGENCY</h3>
+        <p>JEE (Main) 2021 NTA SCORE CARD</p>
+    </div>
+    <hr>
+    <table class="result-table">
+        <tr><td><b>Candidate Name:</b></td><td id="disp-name">ROHIT SHARMA</td></tr>
+        <tr><td><b>Roll Number:</b></td><td>210320054122</td></tr>
+        <tr><td><b>Application No:</b></td><td id="disp-app">210410056789</td></tr>
+    </table>
+    <table class="result-table">
+        <tr style="background:#f2f2f2;">
+            <th>Subject</th>
+            <th>NTA Score (Percentile)</th>
+        </tr>
+        <tr><td>Physics</td><td>99.5423101</td></tr>
+        <tr><td>Chemistry</td><td>98.1124578</td></tr>
+        <tr><td>Mathematics</td><td>99.9854123</td></tr>
+        <tr style="font-weight:bold;"><td>Total (NTA Score)</td><td>99.2145782</td></tr>
+    </table>
+    <br>
+    <button class="btn-submit" style="background:#28a745" onclick="window.print()">Download as PDF</button>
+</div>
+
+<script>
+    // Configuration: Set your hardcoded credentials here
+    const CREDENTIALS = {
+        appNo: "20211005",
+        day: "15",
+        month: "01",
+        year: "2003"
+    };
+
+    function generatePin() {
+        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+        let pin = "";
+        for(let i=0; i<6; i++) pin += chars.charAt(Math.floor(Math.random() * chars.length));
+        document.getElementById("generated_pin").innerText = pin;
+    }
+
+    function validate() {
+        const app = document.getElementById("app_no").value;
+        const d = document.getElementById("dd").value;
+        const m = document.getElementById("mm").value;
+        const y = document.getElementById("yyyy").value;
+        const pinIn = document.getElementById("pin_input").value;
+        const pinActual = document.getElementById("generated_pin").innerText;
+
+        if (app === CREDENTIALS.appNo && d === CREDENTIALS.day && m === CREDENTIALS.month && y === CREDENTIALS.year) {
+            if (pinIn.toUpperCase() === pinActual) {
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("marksheet").style.display = "block";
+            } else {
+                alert("Security Pin does not match.");
+            }
+        } else {
+            alert("Invalid Credentials. Check App Number and DOB.");
+        }
+    }
+</script>
+
+</body>
+</html>
