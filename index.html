@@ -17,7 +17,6 @@
             background-color: #fff;
         }
 
-        /* Header Styles */
         .header {
             display: flex;
             justify-content: space-between;
@@ -26,7 +25,6 @@
         }
         .header-logo-left { height: 65px; }
         .header-logo-right { height: 60px; }
-        
         .header-center {
             text-align: center;
             font-size: 14px;
@@ -124,122 +122,74 @@
             margin: 25px auto 0;
             display: block;
         }
-
-        /* Result Section */
-        #marksheetPage { display: none; padding: 40px; }
-        .marksheet-box {
-            width: 850px;
-            margin: auto;
-            border: 2px solid #000;
-            padding: 30px;
-            background: #fff;
-        }
     </style>
 </head>
 <body>
 
-<div id="loginPage">
-    <div class="header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_of_India_logo.svg/1200px-Government_of_India_logo.svg.png" class="header-logo-left">
-        
-        <div class="header-center">
-            Ministry of Education<br>
-            <span style="font-weight:normal;">Government of India</span><br><br>
-            Joint Entrance Examination (Main) 2026 NTA Score
-        </div>
-
-        <img src="1627885147phpgeFiyR.jpg" class="header-logo-right" alt="NTA">
+<div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_of_India_logo.svg/1200px-Government_of_India_logo.svg.png" class="header-logo-left">
+    <div class="header-center">
+        Ministry of Education<br>
+        <span style="font-weight:normal;">Government of India</span><br><br>
+        Joint Entrance Examination (Main) 2026 NTA Score
     </div>
-
-    <div class="nav-bar">Home</div>
-
-    <div class="main-container">
-        <div class="card">
-            <div class="card-header">View Result</div>
-            <div class="form-body">
-                
-                <div class="row">
-                    <label>Examination Session :</label>
-                    <select id="session"><option>Session 1</option></select>
-                </div>
-
-                <div class="row">
-                    <label>Application Number :</label>
-                    <input type="text" id="appNo">
-                </div>
-
-                <div class="row">
-                    <label>Date of Birth :</label>
-                    <div class="dob-group">
-                        <select id="day"><option value="">Day</option></select>
-                        <select id="month">
-                            <option value="">Month</option>
-                            <option value="01">January</option>
-                            <option value="02">February</option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <select id="year"><option value="">Year</option></select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <label style="color: var(--nta-magenta);">Enter Security Pin <span style="color:red;">(case sensitive)</span> :</label>
-                    <input type="text" id="pinInput">
-                </div>
-
-                <div class="row">
-                    <label>Security Pin :</label>
-                    <div style="width:55%; display:flex; align-items:center;">
-                        <div id="pinBox" class="pin-box">67V500</div>
-                        <span style="color:#0056b3; font-size:11px; margin-left:10px; cursor:pointer; text-decoration: underline;" onclick="generatePin()">Regenerate Security Pin</span>
-                    </div>
-                </div>
-
-                <button class="btn-submit" onclick="checkLogin()">SUBMIT</button>
-            </div>
-        </div>
-    </div>
+    <img src="1627885147phpgeFiyR.jpg" class="header-logo-right" alt="NTA">
 </div>
 
-<div id="marksheetPage">
-    <div class="marksheet-box">
-        <center>
-            <img src="1627885147phpgeFiyR.jpg" height="60">
-            <h2>NATIONAL TESTING AGENCY</h2>
-            <p style="font-weight: bold;">JEE (Main) 2026 NTA SCORE CARD</p>
-        </center>
-        <hr>
-        <table style="width:100%; border-collapse: collapse; margin-top: 20px;">
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Candidate Name:</b></td><td style="padding: 8px; border: 1px solid #ddd;">ROHIT SHARMA</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd;"><b>Application Number:</b></td><td style="padding: 8px; border: 1px solid #ddd;">20211005</td></tr>
-        </table>
-        <br>
-        <table style="width:100%; border-collapse: collapse; text-align: left;">
-            <tr style="background: #f2f2f2;">
-                <th style="padding: 10px; border: 1px solid #000;">Subject</th>
-                <th style="padding: 10px; border: 1px solid #000;">NTA Score</th>
-            </tr>
-            <tr><td style="padding: 10px; border: 1px solid #000;">Physics</td><td style="padding: 10px; border: 1px solid #000;">99.4512304</td></tr>
-            <tr><td style="padding: 10px; border: 1px solid #000;">Chemistry</td><td style="padding: 10px; border: 1px solid #000;">98.9856123</td></tr>
-            <tr><td style="padding: 10px; border: 1px solid #000;">Mathematics</td><td style="padding: 10px; border: 1px solid #000;">99.9923104</td></tr>
-            <tr style="font-weight: bold;"><td style="padding: 10px; border: 1px solid #000;">Total Score</td><td style="padding: 10px; border: 1px solid #000;">99.5123041</td></tr>
-        </table>
-        <br>
-        <button onclick="window.print()" class="btn-submit" style="background:#28a745">Print Score Card</button>
+<div class="nav-bar">Home</div>
+
+<div class="main-container">
+    <div class="card">
+        <div class="card-header">View Result</div>
+        <div class="form-body">
+            
+            <div class="row">
+                <label>Examination Session :</label>
+                <select id="session"><option>Session 1</option></select>
+            </div>
+
+            <div class="row">
+                <label>Application Number :</label>
+                <input type="text" id="appNo">
+            </div>
+
+            <div class="row">
+                <label>Date of Birth :</label>
+                <div class="dob-group">
+                    <select id="day"><option value="">Day</option></select>
+                    <select id="month">
+                        <option value="">Month</option>
+                        <option value="01">January</option><option value="02">February</option>
+                        <option value="03">March</option><option value="04">April</option>
+                        <option value="05">May</option><option value="06">June</option>
+                        <option value="07">July</option><option value="08">August</option>
+                        <option value="09">September</option><option value="10">October</option>
+                        <option value="11">November</option><option value="12">December</option>
+                    </select>
+                    <select id="year"><option value="">Year</option></select>
+                </div>
+            </div>
+
+            <div class="row">
+                <label style="color: var(--nta-magenta);">Enter Security Pin <span style="color:red;">(case sensitive)</span> :</label>
+                <input type="text" id="pinInput">
+            </div>
+
+            <div class="row">
+                <label>Security Pin :</label>
+                <div style="width:55%; display:flex; align-items:center;">
+                    <div id="pinBox" class="pin-box">67V500</div>
+                    <span style="color:#0056b3; font-size:11px; margin-left:10px; cursor:pointer; text-decoration: underline;" onclick="generatePin()">Regenerate Security Pin</span>
+                </div>
+            </div>
+
+            <button class="btn-submit" onclick="checkLogin()">SUBMIT</button>
+        </div>
     </div>
 </div>
 
 <script>
-    // Day and Year Dropdown Loops
+    // Build the Day/Year dropdowns
     const daySelect = document.getElementById('day');
     for (let i = 1; i <= 31; i++) {
         let opt = document.createElement('option');
@@ -271,10 +221,13 @@
         const pin = document.getElementById("pinInput").value;
         const actualPin = document.getElementById("pinBox").innerText;
 
-        // Credentials: App: 20211005, DOB: 15-01-2003
-        if(app === "20211005" && d === "15" && m === "01" && y === "2003" && pin.toUpperCase() === actualPin) {
-            document.getElementById("loginPage").style.display = "none";
-            document.getElementById("marksheetPage").style.display = "block";
+        // TARGET CREDENTIALS
+        if(app === "260310058237" && d === "11" && m === "12" && y === "2006" && pin.toUpperCase() === actualPin) {
+            
+            // REDIRECT TO PDF FILE
+            // Change "result.pdf" below to the EXACT name of your PDF file on GitHub
+            window.location.href = "result.pdf";
+            
         } else {
             alert("Invalid Credentials or Security Pin!");
         }
