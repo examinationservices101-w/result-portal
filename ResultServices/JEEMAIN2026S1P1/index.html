@@ -2,233 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEE (Main) 2026 NTA Score</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JEE Main 2026 Session 1 - Login</title>
     <style>
-        :root {
-            --nta-magenta: #a01b52;
-            --nta-orange: #f0ad4e;
-            --btn-red: #ee3124;
-        }
-
+        /* Base Styles (Laptop/Desktop) */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #fff;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 40px;
-        }
-        .header-logo-left { height: 65px; }
-        .header-logo-right { height: 60px; }
-        .header-center {
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .nav-bar {
-            background-color: var(--nta-magenta);
-            color: white;
-            padding: 8px 50px;
-            font-size: 13px;
-            border-bottom: 4px solid var(--nta-orange);
-        }
-
-        .main-container {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
-            padding-top: 40px;
-        }
-
-        .card {
-            width: 650px;
-            border: 1px solid #dcdcdc;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .card-header {
-            background-color: var(--nta-magenta);
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            font-size: 15px;
-            display: flex;
             align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-
-        .card-header::before {
-            content: "🔒";
-            margin-right: 10px;
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
         }
-
-        .form-body { padding: 30px; }
-        
-        .row {
-            display: flex;
-            align-items: center;
+        .logo {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #1a237e;
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .form-group {
+            text-align: left;
             margin-bottom: 18px;
         }
-
-        .row label {
-            width: 40%;
-            text-align: right;
-            padding-right: 20px;
-            font-size: 13px;
-            color: #333;
+        label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
-
-        .row input, .row select {
-            width: 55%;
-            padding: 6px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-size: 13px;
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
         }
-
-        .dob-group {
-            width: 55%;
-            display: flex;
-            gap: 5px;
+        input:focus {
+            border-color: #1a237e;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
         }
-        .dob-group select { width: 33%; }
-
-        .pin-box {
-            background: #f9f9f9;
-            padding: 5px 15px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            font-style: italic;
-            font-size: 20px;
-            color: var(--nta-magenta);
-            border: 1px solid #ddd;
-            letter-spacing: 3px;
-        }
-
-        .btn-submit {
-            background-color: var(--btn-red);
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a237e;
             color: white;
             border: none;
-            padding: 10px 35px;
+            border-radius: 6px;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 4px;
             cursor: pointer;
-            margin: 25px auto 0;
-            display: block;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0d154a;
+        }
+
+        /* SUPERB MOBILE OPTIMIZATION */
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: #ffffff; /* Clean white for mobile */
+                align-items: flex-start; /* Start from top on mobile */
+                padding-top: 30px;
+            }
+            .container {
+                box-shadow: none; /* Flat design looks better on mobile */
+                width: 90%;
+                padding: 20px;
+            }
+            .logo {
+                width: 150px;
+            }
+            h2 {
+                font-size: 19px;
+                line-height: 1.4;
+            }
+            input, select {
+                font-size: 16px; /* Prevents iPhone auto-zoom */
+                padding: 14px;  /* Bigger touch area */
+            }
+            button {
+                padding: 16px;
+                font-size: 17px;
+                border-radius: 8px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Government_of_India_logo.svg/1200px-Government_of_India_logo.svg.png" class="header-logo-left">
-    <div class="header-center">
-        Ministry of Education<br>
-        <span style="font-weight:normal;">Government of India</span><br><br>
-        Joint Entrance Examination (Main) 2026 NTA Score
+<div class="container">
+    <img src="../../1627885147phpgeFiyR.jpg" alt="NTA Logo" class="logo">
+    <h2>JEE (Main) 2026 Session 1 <br><span style="font-size: 14px; color: #666;">Candidate Login</span></h2>
+    
+    <div class="form-group">
+        <label>Application Number</label>
+        <input type="text" id="appNo" placeholder="Enter Application No.">
     </div>
-    <img src="../../1627885147phpgeFiyR.jpg" class="header-logo-right" alt="NTA">
-</div>
 
-<div class="nav-bar">Home</div>
-
-<div class="main-container">
-    <div class="card">
-        <div class="card-header">View Result</div>
-        <div class="form-body">
-            
-            <div class="row">
-                <label>Examination Session :</label>
-                <select id="session"><option>Session 1</option></select>
-            </div>
-
-            <div class="row">
-                <label>Application Number :</label>
-                <input type="text" id="appNo">
-            </div>
-
-            <div class="row">
-                <label>Date of Birth :</label>
-                <div class="dob-group">
-                    <select id="day"><option value="">Day</option></select>
-                    <select id="month">
-                        <option value="">Month</option>
-                        <option value="01">January</option><option value="02">February</option>
-                        <option value="03">March</option><option value="04">April</option>
-                        <option value="05">May</option><option value="06">June</option>
-                        <option value="07">July</option><option value="08">August</option>
-                        <option value="09">September</option><option value="10">October</option>
-                        <option value="11">November</option><option value="12">December</option>
-                    </select>
-                    <select id="year"><option value="">Year</option></select>
-                </div>
-            </div>
-
-            <div class="row">
-                <label style="color: var(--nta-magenta);">Enter Security Pin <span style="color:red;">(case sensitive)</span> :</label>
-                <input type="text" id="pinInput">
-            </div>
-
-            <div class="row">
-                <label>Security Pin :</label>
-                <div style="width:55%; display:flex; align-items:center;">
-                    <div id="pinBox" class="pin-box">67V500</div>
-                    <span style="color:#0056b3; font-size:11px; margin-left:10px; cursor:pointer; text-decoration: underline;" onclick="generatePin()">Regenerate Security Pin</span>
-                </div>
-            </div>
-
-            <button class="btn-submit" onclick="checkLogin()">SUBMIT</button>
-        </div>
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="text" id="dob" placeholder="DD/MM/YYYY">
     </div>
+
+    <button onclick="checkLogin()">Submit</button>
 </div>
 
 <script>
-    // Build the Day/Year dropdowns
-    const daySelect = document.getElementById('day');
-    for (let i = 1; i <= 31; i++) {
-        let opt = document.createElement('option');
-        opt.value = i < 10 ? '0' + i : i;
-        opt.innerHTML = i;
-        daySelect.appendChild(opt);
-    }
-
-    const yearSelect = document.getElementById('year');
-    for (let i = 2026; i >= 1926; i--) {
-        let opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = i;
-        yearSelect.appendChild(opt);
-    }
-
-    function generatePin() {
-        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-        let res = "";
-        for(let i=0; i<6; i++) res += chars.charAt(Math.floor(Math.random() * chars.length));
-        document.getElementById("pinBox").innerText = res;
-    }
-
     function checkLogin() {
-        const app = document.getElementById("appNo").value;
-        const d = document.getElementById("day").value;
-        const m = document.getElementById("month").value;
-        const y = document.getElementById("year").value;
-        const pin = document.getElementById("pinInput").value;
-        const actualPin = document.getElementById("pinBox").innerText;
+        var appNo = document.getElementById('appNo').value;
+        var dob = document.getElementById('dob').value;
 
-        // TARGET CREDENTIALS
-        if(app === "260310058237" && d === "11" && m === "12" && y === "2006" && pin.toUpperCase() === actualPin) {
-            
-            // Redirects to PDF located 2 folders up in the root
+        // Matches the specific candidate details
+        if (appNo === "260310058237" && dob === "25/08/2007") {
             window.location.href = "../../result.pdf";
-            
         } else {
-            alert("Invalid Credentials or Security Pin!");
+            alert("Invalid Application Number or Date of Birth. Please try again.");
         }
     }
 </script>
