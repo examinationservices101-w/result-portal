@@ -17,16 +17,14 @@
             background-color: #fff;
         }
 
-        /* Header Fixes */
+        /* Header Styles */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 40px;
         }
-        /* Left Logo: Government of India */
         .header-logo-left { height: 65px; }
-        /* Right Logo: National Testing Agency */
         .header-logo-right { height: 60px; }
         
         .header-center {
@@ -150,7 +148,7 @@
             Joint Entrance Examination (Main) 2026 NTA Score
         </div>
 
-        <img src="https://nta.ac.in/img/nta_logo_new.png" class="header-logo-right" onerror="this.src='https://upload.wikimedia.org/wikipedia/en/thumb/5/53/National_Testing_Agency_logo.png/330px-National_Testing_Agency_logo.png'">
+        <img src="1627885147phpgeFiyR.jpg" class="header-logo-right" alt="NTA">
     </div>
 
     <div class="nav-bar">Home</div>
@@ -173,9 +171,7 @@
                 <div class="row">
                     <label>Date of Birth :</label>
                     <div class="dob-group">
-                        <select id="day">
-                            <option value="">Day</option>
-                        </select>
+                        <select id="day"><option value="">Day</option></select>
                         <select id="month">
                             <option value="">Month</option>
                             <option value="01">January</option>
@@ -191,9 +187,7 @@
                             <option value="11">November</option>
                             <option value="12">December</option>
                         </select>
-                        <select id="year">
-                            <option value="">Year</option>
-                        </select>
+                        <select id="year"><option value="">Year</option></select>
                     </div>
                 </div>
 
@@ -219,7 +213,7 @@
 <div id="marksheetPage">
     <div class="marksheet-box">
         <center>
-            <img src="https://nta.ac.in/img/nta_logo_new.png" height="60">
+            <img src="1627885147phpgeFiyR.jpg" height="60">
             <h2>NATIONAL TESTING AGENCY</h2>
             <p style="font-weight: bold;">JEE (Main) 2026 NTA SCORE CARD</p>
         </center>
@@ -245,7 +239,7 @@
 </div>
 
 <script>
-    // Fill Day (1-31)
+    // Day and Year Dropdown Loops
     const daySelect = document.getElementById('day');
     for (let i = 1; i <= 31; i++) {
         let opt = document.createElement('option');
@@ -254,7 +248,6 @@
         daySelect.appendChild(opt);
     }
 
-    // Fill Year (2026-1926)
     const yearSelect = document.getElementById('year');
     for (let i = 2026; i >= 1926; i--) {
         let opt = document.createElement('option');
@@ -278,7 +271,7 @@
         const pin = document.getElementById("pinInput").value;
         const actualPin = document.getElementById("pinBox").innerText;
 
-        // MATCHING CREDENTIALS
+        // Credentials: App: 20211005, DOB: 15-01-2003
         if(app === "20211005" && d === "15" && m === "01" && y === "2003" && pin.toUpperCase() === actualPin) {
             document.getElementById("loginPage").style.display = "none";
             document.getElementById("marksheetPage").style.display = "block";
