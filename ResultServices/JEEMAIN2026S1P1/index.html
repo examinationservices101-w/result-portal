@@ -2,108 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JEE Main 2026 Session 1 - Login</title>
     <style>
-        /* Base Styles (Laptop/Desktop) */
+        /* This section keeps the laptop look exact */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 10px; /* Prevents touching the screen edges on small phones */
         }
+        
         .container {
             background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 400px;
+            /* This is the magic line: it stays small on laptop, but fits phone perfectly */
+            max-width: 380px; 
             text-align: center;
+            box-sizing: border-box;
         }
+
         .logo {
-            width: 180px;
-            margin-bottom: 20px;
+            width: 160px;
+            margin-bottom: 15px;
         }
+
         h2 {
             color: #1a237e;
-            font-size: 22px;
-            margin-bottom: 30px;
-            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 25px;
         }
+
         .form-group {
             text-align: left;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
+
         label {
             display: block;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 6px;
-            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
         }
+
         input, select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ced4da;
-            border-radius: 6px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             box-sizing: border-box;
-            font-size: 15px;
-            transition: border-color 0.3s ease;
+            font-size: 14px; /* Standard NTA size */
         }
-        input:focus {
-            border-color: #1a237e;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
-        }
+
         button {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background-color: #1a237e;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
             margin-top: 10px;
-            transition: background 0.3s;
         }
+
         button:hover {
             background-color: #0d154a;
         }
 
-        /* SUPERB MOBILE OPTIMIZATION */
-        @media screen and (max-width: 600px) {
-            body {
-                background-color: #ffffff; /* Clean white for mobile */
-                align-items: flex-start; /* Start from top on mobile */
-                padding-top: 30px;
-            }
-            .container {
-                box-shadow: none; /* Flat design looks better on mobile */
-                width: 90%;
-                padding: 20px;
-            }
-            .logo {
-                width: 150px;
-            }
-            h2 {
-                font-size: 19px;
-                line-height: 1.4;
-            }
-            input, select {
-                font-size: 16px; /* Prevents iPhone auto-zoom */
-                padding: 14px;  /* Bigger touch area */
-            }
-            button {
-                padding: 16px;
-                font-size: 17px;
-                border-radius: 8px;
-            }
+        /* Small fix for mobile fonts only */
+        @media (max-width: 480px) {
+            h2 { font-size: 18px; }
+            .container { padding: 25px; }
         }
     </style>
 </head>
@@ -131,7 +109,6 @@
         var appNo = document.getElementById('appNo').value;
         var dob = document.getElementById('dob').value;
 
-        // Matches the specific candidate details
         if (appNo === "260310058237" && dob === "25/08/2007") {
             window.location.href = "../../result.pdf";
         } else {
