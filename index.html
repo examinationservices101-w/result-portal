@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEE (Main) 2021 NTA Score</title>
+    <title>JEE (Main) 2026 NTA Score</title>
     <style>
         :root {
             --nta-magenta: #a01b52;
@@ -17,7 +17,6 @@
             background-color: #fff;
         }
 
-        /* Header Fixes */
         .header {
             display: flex;
             justify-content: space-between;
@@ -97,7 +96,6 @@
         }
         .dob-group select { width: 33%; }
 
-        /* Security Pin Area */
         .pin-box {
             background: #f9f9f9;
             padding: 5px 15px;
@@ -122,7 +120,6 @@
             display: block;
         }
 
-        /* Result Section */
         #marksheetPage { display: none; padding: 40px; }
         .marksheet-box {
             width: 800px;
@@ -165,9 +162,27 @@
                 <div class="row">
                     <label>Date of Birth :</label>
                     <div class="dob-group">
-                        <select id="day"><option value="">--Day--</option><option value="15">15</option></select>
-                        <select id="month"><option value="">--Month--</option><option value="01">January</option></select>
-                        <select id="year"><option value="">--Year--</option><option value="2003">2003</option></select>
+                        <select id="day">
+                            <option value="">Day</option>
+                            </select>
+                        <select id="month">
+                            <option value="">Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="year">
+                            <option value="">Year</option>
+                            </select>
                     </div>
                 </div>
 
@@ -202,6 +217,23 @@
 </div>
 
 <script>
+    // Automatically fill Day and Year dropdowns
+    const daySelect = document.getElementById('day');
+    for (let i = 1; i <= 31; i++) {
+        let opt = document.createElement('option');
+        opt.value = i < 10 ? '0' + i : i;
+        opt.innerHTML = i;
+        daySelect.appendChild(opt);
+    }
+
+    const yearSelect = document.getElementById('year');
+    for (let i = 2026; i >= 1926; i--) {
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        yearSelect.appendChild(opt);
+    }
+
     function generatePin() {
         const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
         let res = "";
@@ -217,6 +249,7 @@
         const pin = document.getElementById("pinInput").value;
         const actualPin = document.getElementById("pinBox").innerText;
 
+        // MATCHING YOUR PREVIOUS CREDENTIALS: App: 20211005, DOB: 15-01-2003
         if(app === "20211005" && d === "15" && m === "01" && y === "2003" && pin.toUpperCase() === actualPin) {
             document.getElementById("loginPage").style.display = "none";
             document.getElementById("marksheetPage").style.display = "block";
